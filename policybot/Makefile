@@ -27,7 +27,7 @@ deploy: push deploy_only
 .PHONY: deploy
 
 deploy_only: get-cluster-credentials
-	@helm template --set image=$(IMG) \
+	helm template --set image=$(IMG) \
 		--set GITHUB_WEBHOOK_SECRET=$(GITHUB_WEBHOOK_SECRET) \
 		--set GITHUB_TOKEN=$(GITHUB_TOKEN) \
 		--set GCP_CREDS=$(GCP_CREDS) \
